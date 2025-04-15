@@ -141,7 +141,7 @@ namespace TaskManagementSystemWeb.Controllers
             client.EnableSsl = true;
             client.UseDefaultCredentials = false; // Ensure credentials are explicitly set
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.Credentials = new NetworkCredential("ashfaque4070@gmail.com", "geix seid teny bwfs");
+            client.Credentials = new NetworkCredential("ashfaque4070@gmail.com", "xxxx xxxx xxxx");
 
             MailMessage message = new MailMessage();
             message.From = new MailAddress("ashfaque4070@gmail.com");
