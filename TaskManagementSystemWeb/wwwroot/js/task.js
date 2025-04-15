@@ -75,12 +75,23 @@ function addTask()
         method: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(taskData),
-        success: function ()
-        {
+        success: function () {
             $("#btnTask").text("Add Task");
+            $('#staticBackdrop').modal('show');
+            
             getTasks(); // Refresh the task list after adding a new task
-            $('#taskForm')[0].reset(); // Clear the form
-
+            // Clear the form
+            debugger;
+            console.log('task ID= '+('#taskId').val());
+            if ($('#taskId').val() == 0)
+            {
+                /*$('#mdlNormalMessage').modal('show');*/
+            }
+            else {
+                $('#staticBackdrop').modal('show');
+                $('#taskForm')[0].reset();
+            }
+            
         },
         error: function (error) {
             console.error('Error adding task:', error);
@@ -103,7 +114,7 @@ function editTask(taskId)
         method: 'GET',
         success: function (task)
         {
-            debugger;
+            
             // Populate the form controls with the task details
             $('#title').val(task.title);
             $('#description').val(task.description);
